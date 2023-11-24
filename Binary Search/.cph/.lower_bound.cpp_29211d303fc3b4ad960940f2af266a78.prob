@@ -1,0 +1,1 @@
+{"name":"Local: lower_bound","url":"f:\\Projects\\Phitron\\LiveClass\\Binary Search\\lower_bound.cpp","tests":[{"id":1698476418062,"input":"8\n1 1 2 2 4 4 4 5\n3","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Projects\\Phitron\\LiveClass\\Binary Search\\lower_bound.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: B_AND_0_Sum_Big","url":"f:\\Projects\\Phitron\\LiveClass\\week_4\\B_AND_0_Sum_Big.cpp","tests":[{"id":1697476391557,"input":"2\n2 2\n100000 20","output":"4\n226732710"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Projects\\Phitron\\LiveClass\\week_4\\B_AND_0_Sum_Big.cpp","group":"local","local":true}
