@@ -10,21 +10,23 @@ using namespace std;
 #define no cout<<"NO"<<nl
 #define Yes cout<<"Yes"<<nl
 #define No cout<<"No"<<nl
-typedef pair<int,int>pii;
+typedef pair<ll,ll>pii;
 #define forl(ty,var,str,end) for(ty var=str; var<end; var++)
 # define FAST ios_base :: sync_with_stdio (false) ; cin.tie(0) ; cout.tie(0)
-ll n,mn;
-ll a[15][15];
+ll n,mn,si,sj,di,dj;
+vector<pii> a(15);
 bool vis[15];
 void back(ll n,vector<ll>&v){
     if(v.size()==n){
         ll sum=0;
-        ll last=0;
+        ll lasti=si;
+        ll lastj=sj;
         for(ll i=0;i<n;i++){
-            sum+=(a[last][v[i]]);
-            last=v[i];
+            sum+=(abs(lasti-a[v[i]].first)+abs(lastj-a[v[i]].second));
+            lasti=a[v[i]].first;
+            lastj=a[v[i]].second;
         }
-        sum+=(a[last][0]);
+        sum+=(abs(lasti-di)+abs(lastj-dj));
         mn=min(mn,sum);
     }
     for(ll i=1;i<=n;i++){
@@ -37,22 +39,22 @@ void back(ll n,vector<ll>&v){
         }
     }
 }
+ll cs=1;
 void solve(){
     cin>>n;
-    for(ll i=0;i<n;i++){
-        for(ll j=0;j<n;j++){
-            cin>>a[i][j];
-        }
+    cin>>si>>sj>>di>>dj;
+    for(ll i=1;i<=n;i++){
+        cin>>a[i].first>>a[i].second;
     }
     memset(vis,false,sizeof(vis));
     vector<ll>v;
     mn=INT_MAX;
-    back(n-1,v);
-    cout<<mn<<nl;
+    back(n,v);
+    cout<<"# "<<cs++<<" "<<mn<<nl;
 }
 int main(){
     FAST;
-    int t;cin>>t;
+    int t=10;
     while(t--){
         solve();
     }
