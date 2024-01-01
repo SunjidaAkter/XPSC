@@ -9,23 +9,21 @@ using namespace std;
 #define No cout<<"No"<<nl
 #define FAST ios_base :: sync_with_stdio (false) ; cin.tie(0) ; cout.tie(0)
 typedef pair<ll,ll>pii;
-//*time complexity O(nlog(log(n)))
 void solve(){
     ll n=10;
-    vector<bool>prime(n+1);
-    for(ll i=2;i*i<=n;i++){
-        if(!prime[i]){
-            for(ll j=i*i;j<=n;j+=i){
-                prime[j]=true;
-            }
+    vector<ll>div[n+1];
+    for(ll i=1;i<=n;i++){
+        for(ll j=i;j<=n;j+=i){
+            div[j].push_back(i);
         }
     }
-    for(ll i=2;i<=n;i++){
-        if(!prime[i]){
-            cout<<i<<" ";
+    for(ll i=1;i<=n;i++){
+        cout<<i<<" -> ";
+        for(ll val:div[i]){
+            cout<<val<<" ";
         }
+        cout<<nl;
     }
-    cout<<nl;
 }
 int main(){
     FAST;
